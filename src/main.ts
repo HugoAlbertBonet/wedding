@@ -28,5 +28,5 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </div>
 `
 selectSpeech(document.querySelector<HTMLParagraphElement>('#result')!)
-startRecording(document.querySelector<HTMLButtonElement>('#start')!, document.querySelector<HTMLParagraphElement>('#result')!, document.querySelector<HTMLButtonElement>('#stop')!)
-stopRecording(document.querySelector<HTMLButtonElement>('#stop')!, document.querySelector<HTMLParagraphElement>('#result')!, document.querySelector<HTMLButtonElement>('#start')!)
+startRecording(document.querySelector<HTMLButtonElement>('#start')!)
+stopRecording(document.querySelector<HTMLButtonElement>('#stop')!, document.querySelector<HTMLButtonElement>('#start')!)

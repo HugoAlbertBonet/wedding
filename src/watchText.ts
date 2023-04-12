@@ -1,5 +1,5 @@
 var position = 0;
-var parrafoResult;
+//var parrafoResult;
 var follow = false;
 var discurso = new Array("Hyperloop UPV is a universitary team whose aim is to develop the fifth mean of transport.",
 "These means of transport moves levitating through a tube of vacuum, forgetting about the air and surface friction.",
@@ -10,7 +10,7 @@ var discurso = new Array("Hyperloop UPV is a universitary team whose aim is to d
 
 
 export function selectSpeech(parrafo: HTMLParagraphElement){
-  parrafoResult = parrafo
+  parrafo
   parrafo.innerHTML = discurso.join("<br/>")
 }
 
@@ -81,6 +81,7 @@ function updateResult() {
 
   //This line sets the HTML content of the result element to the boldText string, 
   //effectively updating the webpage to show the highlighted word.
+  if (result !== null)
   result.innerHTML = boldText;
 }
 

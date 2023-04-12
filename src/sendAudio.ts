@@ -1,8 +1,8 @@
 var recording = false;
 var position = 0;
-var mediaRecorder;
-var chunks = [];
-var parrafoResult;
+var mediaRecorder:MediaRecorder;
+var chunks:Array<Blob> = [];
+//var parrafoResult:HTMLParagraphElement;
 var discurso = new Array("Hyperloop UPV es un equipo universitario que se dedica a desarrollar el quinto medio de transporte.",
 "Este transporte se desplaza levitando por un tubo de vacío, por lo que se ahorra el rozamiento con el aire y con la superficie.",
 "Cada año participamos en una competición universitaria, siendo el primer año en Valencia y el segundo en Delft.",
@@ -11,33 +11,13 @@ var discurso = new Array("Hyperloop UPV es un equipo universitario que se dedica
 "Si conseguimos cubrir todo el presupuesto, iremos a por el objetivo 100 de 100"); 
 
 
-function getCounter(parrafo: HTMLParagraphElement){
-  var splitted = parrafo.innerHTML.split(" ")
-  var counter = Number(splitted[splitted.length-1])
-  return counter
-}
-export function sumarCounter(boton: HTMLButtonElement, parrafo: HTMLParagraphElement) {
-  var counter = getCounter(parrafo)
-  const setCounter = (count: number) => {
-    counter = count
-    parrafo.innerHTML = `count is ${counter}`
-  }
-  boton.addEventListener('click', () => setCounter(getCounter(parrafo) + 1))
-}
-export function restarCounter(boton: HTMLButtonElement, parrafo: HTMLParagraphElement) {
-  var counter = getCounter(parrafo)
-  const setCounter = (count: number) => {
-    counter = count
-    parrafo.innerHTML = `count is ${counter}`
-  }
-  boton.addEventListener('click', () => setCounter(getCounter(parrafo) - 1))
-}
+
 export function selectSpeech(parrafo: HTMLParagraphElement){
-  parrafoResult = parrafo
+  parrafo
   parrafo.innerHTML = discurso.join("<br/>")
 }
 
-export function startRecording(botonstart: HTMLButtonElement, parrafo: HTMLParagraphElement, botonstop: HTMLButtonElement) {
+export function startRecording(botonstart: HTMLButtonElement) {
   let value = botonstart.innerHTML;
   const setValue = (text: string) => {
     value = text;
@@ -60,7 +40,7 @@ export function startRecording(botonstart: HTMLButtonElement, parrafo: HTMLParag
   botonstart.addEventListener('click', () => setValue('Recording...'))
 }
 
-function recordAudioChunk(stream){
+function recordAudioChunk(stream:MediaStream){
   mediaRecorder.start();
 
   setTimeout(function() {
@@ -85,9 +65,7 @@ function sendData(botonstart: HTMLButtonElement) {
   //The append() method takes three arguments: the field name ("audio"), the Blob object, and the filename ("recording.webm").
   let formData = new FormData();
   formData.append("file", blob, "recording.webm");
-  for (var pair of formData.entries()) {
-    console.log(pair[0]+ ', ' + pair[1]); 
-  }
+  
   //This line sends the FormData object to the /api/increment endpoint of the backend server using the fetch() method. 
   //The fetch() method returns a promise that resolves to the server's response. 
   //In this case, we're assuming that the server will respond with JSON data containing a position property.
@@ -140,10 +118,11 @@ function updateResult() {
 
   //This line sets the HTML content of the result element to the boldText string, 
   //effectively updating the webpage to show the highlighted word.
-  result.innerHTML = boldText;
+  if (result !== null)
+   result.innerHTML = boldText;
 }
 
-export function stopRecording(botonstop: HTMLButtonElement, parrafo: HTMLParagraphElement, botonstart: HTMLButtonElement) {
+export function stopRecording(botonstop: HTMLButtonElement, botonstart: HTMLButtonElement) {
   let value = botonstart.innerHTML
   const setValue = (text: string) => {
     value = text

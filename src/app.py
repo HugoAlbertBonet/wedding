@@ -9,8 +9,7 @@ import torch
 import torch.nn.functional as F
 from sklearn.metrics.pairwise import cosine_similarity
 #from sentence_transformers import SentenceTransformer
-import nltk
-nltk.download('punkt')
+
 finished = False
 discurso = """Hyperloop UPV es un equipo universitario que se dedica a desarrollar el quinto medio de transporte.
 Este transporte se desplaza levitando por un tubo de vacío, por lo que se ahorra el rozamiento con el aire y con la superficie.
@@ -19,8 +18,7 @@ Este último año fuimos el equipo más premiado de toda la competición, y el p
 Este año hemos conseguido ya más de 80 patrocinadores y tenemos un presupuesto líquido estimado de 82000 euros.
 Si conseguimos cubrir todo el presupuesto, iremos a por el objetivo 100 de 100."""
 
-discurso = discurso.replace('\n', ' ')
-frases = nltk.tokenize.sent_tokenize(discurso)
+frases = discurso.split('\n')
 model = whisper.load_model("base")
 
 tokenizerMiniLM = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')

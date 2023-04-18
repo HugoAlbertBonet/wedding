@@ -4,7 +4,7 @@ import whisper
 #from transformers import pipeline, WhisperProcessor,WhisperForConditionalGeneration
 import subprocess
 #from scipy.io.wavfile import read as read_wav
-from transformers import AutoTokenizer, AutoModel,AutoModelForTokenClassification,AutoModelForSequenceClassification,T5Tokenizer, T5ForConditionalGeneration, TrainingArguments, AdamW
+from transformers import AutoTokenizer, AutoModel #,AutoModelForTokenClassification,AutoModelForSequenceClassification,T5Tokenizer, T5ForConditionalGeneration, TrainingArguments, AdamW
 import torch
 import torch.nn.functional as F
 from sklearn.metrics.pairwise import cosine_similarity

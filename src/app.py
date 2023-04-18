@@ -1,14 +1,14 @@
 from flask import Flask, request, json
 from flask_cors import CORS
 import whisper
-from transformers import pipeline, WhisperProcessor,WhisperForConditionalGeneration
+#from transformers import pipeline, WhisperProcessor,WhisperForConditionalGeneration
 import subprocess
-from scipy.io.wavfile import read as read_wav
+#from scipy.io.wavfile import read as read_wav
 from transformers import AutoTokenizer, AutoModel,AutoModelForTokenClassification,AutoModelForSequenceClassification,T5Tokenizer, T5ForConditionalGeneration, TrainingArguments, AdamW
 import torch
 import torch.nn.functional as F
 from sklearn.metrics.pairwise import cosine_similarity
-from sentence_transformers import SentenceTransformer
+#from sentence_transformers import SentenceTransformer
 import nltk
 nltk.download('punkt')
 finished = False

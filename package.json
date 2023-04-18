@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "sudo tsc && vite build && python3 src/app.py",
+    "build": "npm clean-install && tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {

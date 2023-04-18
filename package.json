@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm clean-install && tsc && vite build && pip install flask && pip install flask_cors && pip install git+https://github.com/openai/whisper.git && pip install torch && pip install transformers && pip install -U scikit-learn && python3 /vercel/path0/src/app.py",
+    "build": "npm clean-install && tsc && vite build && pip install flask && pip install flask_cors && pip install git+https://github.com/openai/whisper.git && pip install torch && pip install transformers && pip install -U scikit-learn && pip install nltk && python3 /vercel/path0/src/app.py",
     "preview": "vite preview"
   },
   "devDependencies": {

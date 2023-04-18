@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm clean-install && tsc && vite build && python3 /src/app.py",
+    "build": "npm clean-install && tsc && vite build && python3 /vercel/path0/src/app.py",
     "preview": "vite preview"
   },
   "devDependencies": {

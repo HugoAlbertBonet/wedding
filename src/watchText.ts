@@ -39,7 +39,7 @@ function getData(botonstart: HTMLButtonElement) {
   //In this case, we're assuming that the server will respond with JSON data containing a position property.
   //The response is parsed as JSON using the json() method and the resulting position value is assigned to the position variable. 
   //Finally, the updateResult() function is called to highlight the word at the specified position on the webpage.
-  fetch("http://localhost:5050/line", {
+  fetch("https://wedding-delta-henna.vercel.app/line", {
       method: "GET"
   }).then(response => {
       return response.json();

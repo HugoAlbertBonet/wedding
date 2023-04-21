@@ -5,8 +5,8 @@ export default defineConfig({
       rollupOptions: {
           input: {
             index: fileURLToPath(new URL('index.html', import.meta.url)),
-            accordion: fileURLToPath(
-              new URL('src/components/Accordion/index.html', import.meta.url)
+            public: fileURLToPath(
+              new URL('transmit.html', import.meta.url)
             ),
           },
       },

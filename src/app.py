@@ -134,7 +134,7 @@ def followSpeech():
             mimetype='application/json',
             response=json.dumps({"position" : contador})
         )
-        #response.headers['Access-Control-Allow-Origin'] = 'http://localhost:5173'
+        response.headers['Access-Control-Allow-Origin'] = 'https://wedding-hugoalbertbonet.vercel.app'
         #print(response)
         if contador == -1:
             contador = 0

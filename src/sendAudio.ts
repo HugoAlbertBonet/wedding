@@ -71,7 +71,7 @@ function sendData(botonstart: HTMLButtonElement) {
   //In this case, we're assuming that the server will respond with JSON data containing a position property.
   //The response is parsed as JSON using the json() method and the resulting position value is assigned to the position variable. 
   //Finally, the updateResult() function is called to highlight the word at the specified position on the webpage.
-  fetch("/src/audio", {
+  fetch("/audio", {
       method: "POST",
       body: formData
   }).then(response => {

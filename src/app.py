@@ -112,7 +112,7 @@ def handle_key_data():
         )
         if contador == -1:
             contador = 0
-        #response.headers['Access-Control-Allow-Origin'] = 'http://localhost:5173'
+        response.headers['Access-Control-Allow-Origin'] = 'https://wedding-hugoalbertbonet.vercel.app'
         #print(response)
         
     return response

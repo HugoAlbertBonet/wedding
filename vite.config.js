@@ -11,9 +11,6 @@ export default defineConfig({
             public: fileURLToPath(
               new URL('transmit.html', import.meta.url)
             ),
-            audio: fileURLToPath(
-              new URL('./src/audio', import.meta.url)
-            ),
           },
       },
     },

@@ -4,6 +4,9 @@ import { selectSpeech, startRecording, stopRecording } from './sendAudio'
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <header class = "Header">
     <h1>Microphone Test</h1>
+    <button id="primero" type="button">Discurso 1</button>
+    <button id="segundo" type="button">Discruso 2</button>
+    <button id="segundo" type="button">Discurso 3</button>
   </header>
   <div class="card">
     <button id="start" type="button">Start Recording</button>
